@@ -174,5 +174,5 @@ func makeTypeName(prefix *prefixList, typeName string) string {
 // the implementations.
 func makeLongTypeName(prefix *prefixList, typeName string) string {
 	typeName = upperFirst(typeName)
-	return joinPrefixList(&prefixList{typeName, prefix})
+	return normalize(joinPrefixList(&prefixList{typeName, prefix}))
 }

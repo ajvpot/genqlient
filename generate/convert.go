@@ -173,7 +173,7 @@ func (g *generator) convertArguments(
 			return nil, err
 		}
 
-		goName := upperFirst(arg.Variable)
+		goName := normalize(arg.Variable)
 		// Some of the arguments don't apply here, namely the name-prefix (see
 		// names.go) and the selection-set (we use all the input type's fields,
 		// and so on recursively).  See also the `case ast.InputObject` in
@@ -341,7 +341,7 @@ func (g *generator) convertDefinition(
 		// ever possibly generate for this type, so we don't need any of the
 		// qualifiers.  This is especially helpful because the caller is very
 		// likely to need to reference these types in their code.
-		name = upperFirst(def.Name)
+		name = normalize(def.Name)
 		// (namePrefix is ignored in this case.)
 	} else {
 		// Else, construct a name using the usual algorithm (see names.go).

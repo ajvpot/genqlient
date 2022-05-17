@@ -7,6 +7,7 @@ require (
 	github.com/agnivade/levenshtein v1.1.1 // indirect
 	github.com/alexflint/go-arg v1.4.2
 	github.com/bradleyjkemp/cupaloy/v2 v2.6.0
+	github.com/golang/protobuf v1.5.2
 	github.com/stretchr/testify v1.7.0
 	github.com/vektah/gqlparser/v2 v2.4.1
 	golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8 // indirect
