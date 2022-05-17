@@ -420,7 +420,7 @@ func (g *generator) convertDefinition(
 				return nil, err
 			}
 
-			goName := upperFirst(field.Name)
+			goName := normalize(field.Name)
 			// Several of the arguments don't really make sense here:
 			// (note field.Type is necessarily a scalar, input, or enum)
 			// - namePrefix is ignored for input types and enums (see
@@ -852,7 +852,7 @@ func (g *generator) convertField(
 			field.Position, "undefined field %v", field.Alias)
 	}
 
-	goName := upperFirst(field.Alias)
+	goName := normalize(field.Alias)
 	namePrefix = nextPrefix(namePrefix, field)
 
 	fieldGoType, err := g.convertType(
